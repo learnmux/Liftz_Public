@@ -213,7 +213,13 @@
         radial-gradient(circle at 45% 32%, rgba(66, 153, 225, 0.24), transparent 18%),
         linear-gradient(150deg, #161922, #07080c 62%, #2b1207);
       aspect-ratio: 9 / 18.5;
-      padding: 18px;
+    }
+
+    .hero-phone-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .phone-top {
@@ -721,24 +727,7 @@
       </div>
       <div class="hero-visual">
         <div class="hero-phone" aria-label="Liftz Hunt League preview">
-          <div class="phone-top">
-            <span>Liftz Hunt</span>
-            <span>L1</span>
-          </div>
-          <div class="map-panel">
-            <div class="route-line"></div>
-            <div class="blue-dot"></div>
-          </div>
-          <div class="hunt-panel">
-            <small>Distance milestone</small>
-            <h3>28.9 / 50 km</h3>
-            <div class="progress"><span></span></div>
-            <div class="phone-stats">
-              <div><strong>#12</strong><span>Rank</span></div>
-              <div><strong>286</strong><span>Score</span></div>
-              <div><strong>4d</strong><span>Left</span></div>
-            </div>
-          </div>
+          <img class="hero-phone-img" src="assets/final_screenshots/04_home.png" alt="Liftz home dashboard screen" />
         </div>
       </div>
     </section>
