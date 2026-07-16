@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Liftz — Your Gym Buddy</title>
-  <meta name="description" content="Liftz is your adaptive fitness tracker: personalised workouts, readiness scoring, and progress photos, all in one app." />
+  <title>Liftz — Train Smarter. Hunt Harder.</title>
+  <meta name="description" content="Liftz combines daily readiness, adaptive workouts, Hevy import, and GPS Hunt League challenges in one fitness app." />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -98,6 +98,62 @@
       margin-bottom: 32px;
     }
 
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      margin-bottom: 16px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,135,55,0.26);
+      background: rgba(255,135,55,0.1);
+      color: var(--orange);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .hero-kicker::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #2dd36f;
+      box-shadow: 0 0 16px rgba(45,211,111,0.8);
+    }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      max-width: 520px;
+      margin: 0 0 28px;
+    }
+
+    .hero-point {
+      min-height: 76px;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.045);
+    }
+
+    .hero-point strong {
+      display: block;
+      color: #fff;
+      font-size: 15px;
+      line-height: 1.15;
+      margin-bottom: 4px;
+    }
+
+    .hero-point span {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.3;
+    }
+
     .store-row {
       display: flex;
       align-items: center;
@@ -145,11 +201,132 @@
       justify-content: center;
     }
 
-    .hero-shot {
+    .hero-phone {
       width: 260px;
       max-width: 100%;
       border-radius: 20px;
       box-shadow: 0 30px 60px -20px rgba(255,135,55,0.35);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.12);
+      background:
+        radial-gradient(circle at 45% 32%, rgba(66, 153, 225, 0.24), transparent 18%),
+        linear-gradient(150deg, #161922, #07080c 62%, #2b1207);
+      aspect-ratio: 9 / 18.5;
+      padding: 18px;
+    }
+
+    .phone-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 22px;
+      color: rgba(255,255,255,0.72);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .map-panel {
+      height: 46%;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background:
+        linear-gradient(90deg, transparent 48%, rgba(255,255,255,0.08) 49%, transparent 50%),
+        linear-gradient(0deg, transparent 48%, rgba(255,255,255,0.08) 49%, transparent 50%),
+        #111821;
+      background-size: 48px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .route-line {
+      position: absolute;
+      left: 36px;
+      top: 92px;
+      width: 142px;
+      height: 78px;
+      border-left: 8px solid var(--orange);
+      border-bottom: 8px solid var(--orange);
+      border-radius: 0 0 0 34px;
+      transform: rotate(-10deg);
+      box-shadow: 0 0 18px rgba(255,135,55,0.45);
+    }
+
+    .blue-dot {
+      position: absolute;
+      right: 46px;
+      bottom: 48px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #4b93ff;
+      border: 5px solid #dceaff;
+      box-shadow: 0 0 0 18px rgba(75,147,255,0.18);
+    }
+
+    .hunt-panel {
+      margin-top: 14px;
+      padding: 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.11);
+    }
+
+    .hunt-panel small {
+      color: var(--orange);
+      font-weight: 900;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+
+    .hunt-panel h3 {
+      margin: 6px 0 12px;
+      color: #fff;
+      font-size: 22px;
+      line-height: 1.1;
+    }
+
+    .progress {
+      height: 8px;
+      border-radius: 99px;
+      background: rgba(255,255,255,0.14);
+      overflow: hidden;
+    }
+
+    .progress span {
+      display: block;
+      width: 58%;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--orange), var(--yellow));
+    }
+
+    .phone-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .phone-stats div {
+      padding: 9px 6px;
+      border-radius: 10px;
+      background: rgba(0,0,0,0.28);
+      text-align: center;
+    }
+
+    .phone-stats strong {
+      display: block;
+      color: var(--orange);
+      font-size: 15px;
+      line-height: 1;
+    }
+
+    .phone-stats span {
+      color: var(--muted);
+      font-size: 9px;
+      font-weight: 800;
+      text-transform: uppercase;
     }
 
     /* Section heading */
@@ -212,6 +389,96 @@
       font-size: 14px;
       color: var(--muted);
       line-height: 1.55;
+    }
+
+    .league-band {
+      padding: 20px 0 76px;
+    }
+
+    .league-shell {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: stretch;
+      border: 1px solid rgba(255,135,55,0.18);
+      border-radius: 18px;
+      padding: 28px;
+      background:
+        radial-gradient(circle at 18% 20%, rgba(255,135,55,0.16), transparent 30%),
+        var(--card);
+    }
+
+    .league-copy h2 {
+      color: #fff;
+      font-size: clamp(24px, 4vw, 34px);
+      line-height: 1.08;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    .league-copy p {
+      color: var(--muted);
+      max-width: 560px;
+      margin-bottom: 18px;
+    }
+
+    .league-rules {
+      display: grid;
+      gap: 10px;
+      list-style: none;
+    }
+
+    .league-rules li {
+      display: flex;
+      gap: 10px;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .league-rules li::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      margin-top: 8px;
+      border-radius: 50%;
+      background: var(--orange);
+      flex-shrink: 0;
+    }
+
+    .league-card {
+      display: grid;
+      gap: 12px;
+      padding: 18px;
+      border-radius: 16px;
+      background: rgba(0,0,0,0.28);
+      border: 1px solid var(--border);
+    }
+
+    .rank-row {
+      display: grid;
+      grid-template-columns: 120px minmax(0, 1fr) 190px;
+      align-items: center;
+      gap: 12px;
+      padding: 12px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.055);
+    }
+
+    .rank-row b {
+      color: var(--orange);
+      font-size: 20px;
+    }
+
+    .rank-row span {
+      color: #fff;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .rank-row small {
+      color: var(--muted);
+      font-weight: 700;
+      text-align: right;
     }
 
     /* Screenshot strip */
@@ -388,11 +655,22 @@
     @media (max-width: 860px) {
       .features-grid { grid-template-columns: repeat(2, 1fr); }
       .hero { padding-top: 24px; }
+      .league-shell { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 520px) {
       .features-grid { grid-template-columns: 1fr; }
+      .hero-points { grid-template-columns: 1fr; }
       .hero-visual { flex-basis: 100%; }
+      .rank-row {
+        grid-template-columns: 74px minmax(0, 1fr);
+        row-gap: 2px;
+      }
+      .rank-row span { text-align: left; }
+      .rank-row small {
+        grid-column: 2;
+        text-align: left;
+      }
     }
   </style>
 </head>
@@ -407,8 +685,23 @@
 
     <section class="hero">
       <div class="hero-copy">
-        <h1>Your <span>Gym Buddy</span>, in your pocket.</h1>
-        <p>Liftz builds personalised workouts around your goals and readiness, tracks every set in real time, and shows you the progress along the way.</p>
+        <div class="hero-kicker">iOS early access is live</div>
+        <h1>Train smarter. <span>Hunt harder.</span></h1>
+        <p>Liftz adapts workouts to your daily readiness, imports your Hevy history, and turns walking into GPS quests, milestones, and monthly Hunt League rewards.</p>
+        <div class="hero-points">
+          <div class="hero-point">
+            <strong>Daily readiness</strong>
+            <span>Know when to push and when to back off.</span>
+          </div>
+          <div class="hero-point">
+            <strong>Hevy import</strong>
+            <span>Bring your workout history into Liftz.</span>
+          </div>
+          <div class="hero-point">
+            <strong>Hunt League</strong>
+            <span>Walk, score points, and climb the board.</span>
+          </div>
+        </div>
         <div class="store-row">
           <a class="appstore-badge" href="https://apps.apple.com/in/app/liftz-your-gym-buddy/id6779775357" aria-label="Download on the App Store" target="_blank" rel="noopener">
             <svg viewBox="0 0 135 40" xmlns="http://www.w3.org/2000/svg">
@@ -422,37 +715,99 @@
           </a>
           <span class="android-pill">Android — coming soon</span>
         </div>
+        <div class="store-row" style="margin-top:40px;">
+          <a href="https://www.producthunt.com/products/liftz-your-gym-buddy?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-liftz-your-gym-buddy" target="_blank" rel="noopener noreferrer"><img alt="Liftz — Your Gym Buddy - Train based on your recovery, not a fixed workout plan. | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1188667&amp;theme=light&amp;t=1783303336240"></a>
+        </div>        
       </div>
       <div class="hero-visual">
-        <img class="hero-shot" src="assets/screenshots/04_IMG_2310.png" alt="Liftz readiness score and lift progress screen" />
+        <div class="hero-phone" aria-label="Liftz Hunt League preview">
+          <div class="phone-top">
+            <span>Liftz Hunt</span>
+            <span>L1</span>
+          </div>
+          <div class="map-panel">
+            <div class="route-line"></div>
+            <div class="blue-dot"></div>
+          </div>
+          <div class="hunt-panel">
+            <small>Distance milestone</small>
+            <h3>28.9 / 50 km</h3>
+            <div class="progress"><span></span></div>
+            <div class="phone-stats">
+              <div><strong>#12</strong><span>Rank</span></div>
+              <div><strong>286</strong><span>Score</span></div>
+              <div><strong>4d</strong><span>Left</span></div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="features">
       <div class="section-heading">
-        <h2>Everything you need to keep showing up</h2>
-        <p>Built for people who want a plan, not a spreadsheet.</p>
+        <h2>One app for training, recovery, and competition</h2>
+        <p>Built for lifters who want useful decisions, not another empty tracker.</p>
       </div>
       <div class="features-grid">
         <div class="feature-card">
           <div class="feature-icon">🏋️</div>
-          <h3>Adaptive Workout Generator</h3>
-          <p>Plans built around your goals, available equipment, and how ready your body actually is.</p>
+          <h3>Adaptive Workouts</h3>
+          <p>Generate sessions around your goal, equipment, time, fatigue, and readiness for the day.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">⚡</div>
           <h3>Readiness Score</h3>
-          <p>Combines your HealthKit sleep, steps, and calories with how you feel, so your plan adjusts to you.</p>
+          <p>Sleep, steps, calories, energy, soreness, and intent come together into one daily training signal.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">👟</div>
+          <h3>Liftz Hunt</h3>
+          <p>Start GPS walking quests, earn points per kilometer, hit distance milestones, and share completions.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🏆</div>
+          <h3>Hunt League</h3>
+          <p>Compete in monthly verified rankings where top eligible premium users can win rewards.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📥</div>
+          <h3>Hevy Import</h3>
+          <p>Import your workout history, custom exercises, PRs, fatigue data, and insights in minutes.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Useful Insights</h3>
+          <p>See muscle fatigue, training frequency, personal records, and lift progress from real workout data.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">⏱️</div>
-          <h3>Live Session Tracking</h3>
-          <p>Real-time set and rep logging with a built-in rest timer, right on your lock screen.</p>
+          <h3>Live Tracking</h3>
+          <p>Track sets, rest time, Hunt routes, and key activity moments with clean live feedback.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">📸</div>
-          <h3>Progress Photos</h3>
-          <p>Capture and compare your transformation over time, right alongside your workout history.</p>
+          <div class="feature-icon">🤝</div>
+          <h3>Invite Friends</h3>
+          <p>Bring friends into Liftz, compare progress, and grow the monthly Hunt competition together.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="league-band">
+      <div class="league-shell">
+        <div class="league-copy">
+          <h2>Hunt League makes walking competitive.</h2>
+          <p>Liftz Hunt is for premium users who want fitness to feel alive. Walks are GPS-tracked, rewards are competitive, and monthly winners are reviewed before payout.</p>
+          <ul class="league-rules">
+            <li>Ranking is based on verified Hunt activity, not manually typed workout claims.</li>
+            <li>Workout consistency can be used as an eligibility gate, so winners are real active users.</li>
+            <li>Rewards go to top monthly finishers after anti-abuse review.</li>
+          </ul>
+        </div>
+        <div class="league-card" aria-label="Hunt League example rankings">
+          <div class="rank-row"><b>#1</b><span>Champion</span><small>Reward drop</small></div>
+          <div class="rank-row"><b>#2</b><span>Podium</span><small>Premium reward</small></div>
+          <div class="rank-row"><b>#3</b><span>Podium</span><small>Premium reward</small></div>
+          <div class="rank-row"><b>#4-10</b><span>Finalists</span><small>Bonus drops</small></div>
         </div>
       </div>
     </section>
@@ -460,18 +815,19 @@
     <section class="screenshots">
       <div class="section-heading">
         <h2>See it in action</h2>
-        <p>A closer look at the app your friends keep asking about.</p>
+        <p>Readiness, workouts, insights, and progress screens from the current iOS app.</p>
       </div>
       <div class="screenshots-swiper" id="screenshotsTrack">
-        <img class="screenshot-shot" src="assets/screenshots/04_IMG_2310.png" alt="Liftz readiness score and lift progress screen" />
-        <img class="screenshot-shot" src="assets/screenshots/01_IMG_2308.png" alt="Liftz insights and training load screen" />
-        <img class="screenshot-shot" src="assets/screenshots/02_IMG_2314.png" alt="Liftz per-lift strength progress screen" />
-        <img class="screenshot-shot" src="assets/screenshots/10_IMG_2307.png" alt="Liftz muscle fatigue and frequency screen" />
-        <img class="screenshot-shot" src="assets/screenshots/06_IMG_2322.png" alt="Liftz guided exercise checklist screen" />
-        <img class="screenshot-shot" src="assets/screenshots/05_IMG_2321.png" alt="Liftz workout session summary screen" />
-        <img class="screenshot-shot" src="assets/screenshots/09_IMG_2320.png" alt="Liftz training tip article screen" />
-        <img class="screenshot-shot" src="assets/screenshots/07_IMG_2319.png" alt="Liftz knowledge hub screen" />
-        <img class="screenshot-shot" src="assets/screenshots/08_IMG_2316.png" alt="Liftz calorie calculator screen" />
+        <img class="screenshot-shot" src="assets/final_screenshots/01_hunt_gps.png" alt="Liftz Hunt GPS-verified walk screen" />
+        <img class="screenshot-shot" src="assets/final_screenshots/02_hunt_league.png" alt="Liftz Hunt League leaderboard screen" />
+        <img class="screenshot-shot" src="assets/final_screenshots/03_quest_board.png" alt="Liftz Hunt quest board screen" />
+        <img class="screenshot-shot" src="assets/final_screenshots/04_home.png" alt="Liftz home dashboard screen" />
+        <img class="screenshot-shot" src="assets/final_screenshots/05_insights_load.png" alt="Liftz insights and training load screen" />
+        <img class="screenshot-shot" src="assets/final_screenshots/06_insights_cardio.png" alt="Liftz cardio insights screen" />
+        <img class="screenshot-shot" src="assets/final_screenshots/07_track_every_lift.png" alt="Liftz per-lift strength progress screen" />
+        <img class="screenshot-shot" src="assets/final_screenshots/08_crush_every_session.png" alt="Liftz workout session screen" />
+        <img class="screenshot-shot" src="assets/final_screenshots/09_guided_set_by_set.png" alt="Liftz guided set-by-set logging screen" />
+        <img class="screenshot-shot" src="assets/final_screenshots/10_knowledge_hub.png" alt="Liftz knowledge hub screen" />
       </div>
       <div class="swiper-nav">
         <button class="swiper-btn" id="swiperPrev" aria-label="Previous screenshot">&#8249;</button>
@@ -482,7 +838,7 @@
     <section class="roadmap">
       <div class="section-heading">
         <h2>The Journey</h2>
-        <p>From a gym frustration to an App Store launch — and where we're headed next.</p>
+        <p>From adaptive workouts to Hunt League — and where Liftz is headed next.</p>
       </div>
       <div class="timeline">
         <div class="timeline-item">
@@ -520,32 +876,32 @@
         <div class="timeline-item upcoming">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <span class="timeline-date">Jul 2026 <span class="timeline-tag">Coming soon</span></span>
-            <h3>Smarter updates &amp; imports</h3>
-            <p>Soft/hard update prompts, plus importing workouts from other apps.</p>
+            <span class="timeline-date">Jul 2026 <span class="timeline-tag">Rolling out</span></span>
+            <h3>Hunt League, Hevy import, and referrals</h3>
+            <p>The next Liftz update adds GPS walking quests, monthly league rewards, Hevy history import, share cards, and invite tracking.</p>
           </div>
         </div>
         <div class="timeline-item upcoming">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <span class="timeline-date">Aug – Sep 2026 <span class="timeline-tag">Coming soon</span></span>
-            <h3>Android launch</h3>
-            <p>Liftz comes to Android.</p>
+            <span class="timeline-date">Next <span class="timeline-tag">Planned</span></span>
+            <h3>First 100 early users</h3>
+            <p>A controlled iOS rollout with founder-led feedback, tighter onboarding, and the first Hunt League cohort.</p>
           </div>
         </div>
         <div class="timeline-item upcoming">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <span class="timeline-date">What's next</span>
-            <h3>And more to come</h3>
-            <p>This is just the beginning.</p>
+            <span class="timeline-date">After iOS beta</span>
+            <h3>Android and deeper social competition</h3>
+            <p>Android support, stronger friend loops, richer Hunt rewards, and more ways to share progress.</p>
           </div>
         </div>
       </div>
     </section>
 
     <section class="cta">
-      <h2>Ready to lift smarter?</h2>
+      <h2>Ready to train smarter and join the Hunt?</h2>
       <div class="store-row">
         <a class="appstore-badge" href="https://apps.apple.com/in/app/liftz-your-gym-buddy/id6779775357" aria-label="Download on the App Store" target="_blank" rel="noopener">
           <svg viewBox="0 0 135 40" xmlns="http://www.w3.org/2000/svg">
