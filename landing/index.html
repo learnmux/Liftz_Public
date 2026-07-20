@@ -61,6 +61,145 @@
       color: #fff;
     }
 
+    /* Hunt promo banner */
+    .hunt-promo {
+      padding: 8px 0 4px;
+    }
+
+    .hunt-promo-shell {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 32px;
+      align-items: center;
+      border: 1px solid rgba(255,135,55,0.28);
+      border-radius: 18px;
+      padding: 30px 32px;
+      background:
+        radial-gradient(circle at 85% 15%, rgba(255,209,102,0.16), transparent 42%),
+        radial-gradient(circle at 8% 85%, rgba(255,135,55,0.14), transparent 42%),
+        var(--card);
+    }
+
+    .hunt-promo-shell::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--orange), var(--yellow));
+    }
+
+    .hunt-promo-copy h2 {
+      font-size: clamp(22px, 3.4vw, 30px);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      line-height: 1.18;
+      color: #fff;
+      margin: 14px 0 12px;
+    }
+
+    .hunt-promo-copy h2 span {
+      background: linear-gradient(135deg, var(--orange), var(--yellow));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hunt-promo-copy p {
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 440px;
+      margin-bottom: 22px;
+    }
+
+    .hunt-promo-timer-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hunt-promo-timer {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .timer-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 62px;
+      padding: 12px 6px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(0,0,0,0.28);
+    }
+
+    .timer-num {
+      font-size: clamp(24px, 3.6vw, 34px);
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, var(--orange), var(--yellow));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      transition: transform 0.18s ease;
+    }
+
+    .timer-num.tick {
+      transform: scale(1.12);
+    }
+
+    .timer-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .timer-sep {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--muted);
+      padding-bottom: 14px;
+      opacity: 0.55;
+      animation: timerBlink 1s steps(1) infinite;
+    }
+
+    @keyframes timerBlink {
+      50% { opacity: 0.15; }
+    }
+
+    .hunt-promo-caption {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.3px;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .timer-sep { animation: none; }
+      .timer-num { transition: none; }
+    }
+
     /* Hero */
     .hero {
       display: flex;
@@ -549,12 +688,15 @@
       .features-grid { grid-template-columns: repeat(2, 1fr); }
       .hero { padding-top: 24px; }
       .league-shell { grid-template-columns: 1fr; }
+      .hunt-promo-shell { grid-template-columns: 1fr; padding: 26px 22px; }
     }
 
     @media (max-width: 520px) {
       .features-grid { grid-template-columns: 1fr; }
       .hero-points { grid-template-columns: 1fr; }
       .hero-visual { flex-basis: 100%; }
+      .timer-block { min-width: 50px; padding: 10px 4px; }
+      .hunt-promo-timer { gap: 6px; }
       .rank-row {
         grid-template-columns: 74px minmax(0, 1fr);
         row-gap: 2px;
@@ -575,6 +717,41 @@
       </div>
       <span class="wordmark">LIFTZ</span>
     </header>
+
+    <section class="hunt-promo">
+      <div class="hunt-promo-shell">
+        <div class="hunt-promo-copy">
+          <div class="hero-kicker" id="huntKicker">Free for your first 2 monthly challenges</div>
+          <h2 id="huntHeadline">Hunt League opens <span>August 1.</span></h2>
+          <p id="huntSubcopy">Walk real routes, score points, and climb the monthly board. Top finishers win Amazon coupon rewards. Install Liftz now — no premium needed for your first two months.</p>
+          <div class="store-row">
+            <a class="appstore-badge" href="https://apps.apple.com/in/app/liftz-your-gym-buddy/id6779775357" aria-label="Download on the App Store" target="_blank" rel="noopener">
+              <svg viewBox="0 0 135 40" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.5" y="0.5" width="134" height="39" rx="8" fill="#000" stroke="rgba(255,255,255,0.7)"/>
+                <g transform="translate(14, 11.8) scale(0.68)">
+                  <path fill="#fff" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.06 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.947 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.038-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zm3.632-3.301c.843-1.012 1.4-2.427 1.245-3.831-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.717-.688 3.56-1.701z"/>
+                </g>
+                <text x="83" y="17" text-anchor="middle" fill="#fff" font-family="-apple-system, sans-serif" font-size="9" font-weight="400">Download on the</text>
+                <text x="83" y="30" text-anchor="middle" fill="#fff" font-family="-apple-system, sans-serif" font-size="15" font-weight="600">App Store</text>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="hunt-promo-timer-wrap">
+          <p class="sr-only">Hunt League opens August 1, 2026.</p>
+          <div class="hunt-promo-timer" id="huntTimer" aria-hidden="true">
+            <div class="timer-block"><span class="timer-num" id="tDays">00</span><span class="timer-label">Days</span></div>
+            <span class="timer-sep">:</span>
+            <div class="timer-block"><span class="timer-num" id="tHours">00</span><span class="timer-label">Hrs</span></div>
+            <span class="timer-sep">:</span>
+            <div class="timer-block"><span class="timer-num" id="tMins">00</span><span class="timer-label">Min</span></div>
+            <span class="timer-sep">:</span>
+            <div class="timer-block"><span class="timer-num" id="tSecs">00</span><span class="timer-label">Sec</span></div>
+          </div>
+          <div class="hunt-promo-caption" id="huntCaption">Countdown shown in IST</div>
+        </div>
+      </div>
+    </section>
 
     <section class="hero">
       <div class="hero-copy">
@@ -808,6 +985,50 @@
     document.getElementById('swiperNext').addEventListener('click', function () {
       track.scrollBy({ left: 260, behavior: 'smooth' });
     });
+
+    (function () {
+      var target = new Date('2026-08-01T00:00:00+05:30').getTime();
+      var dayEl = document.getElementById('tDays');
+      var hourEl = document.getElementById('tHours');
+      var minEl = document.getElementById('tMins');
+      var secEl = document.getElementById('tSecs');
+      var kicker = document.getElementById('huntKicker');
+      var headline = document.getElementById('huntHeadline');
+      var subcopy = document.getElementById('huntSubcopy');
+      var timerEl = document.getElementById('huntTimer');
+      var caption = document.getElementById('huntCaption');
+      var huntTick;
+
+      function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+      function goLive() {
+        kicker.textContent = 'Hunt League is live';
+        headline.innerHTML = 'The Hunt is <span>live now.</span>';
+        subcopy.textContent = "Open Liftz, start a walk, and start climbing this month's board. Your first two monthly challenges are free.";
+        timerEl.style.display = 'none';
+        caption.style.display = 'none';
+        clearInterval(huntTick);
+      }
+
+      function tick() {
+        var diff = target - Date.now();
+        if (diff <= 0) { goLive(); return; }
+        var d = Math.floor(diff / 86400000);
+        var h = Math.floor((diff % 86400000) / 3600000);
+        var m = Math.floor((diff % 3600000) / 60000);
+        var s = Math.floor((diff % 60000) / 1000);
+        dayEl.textContent = pad(d);
+        hourEl.textContent = pad(h);
+        minEl.textContent = pad(m);
+        secEl.textContent = pad(s);
+        secEl.classList.remove('tick');
+        void secEl.offsetWidth;
+        secEl.classList.add('tick');
+      }
+
+      tick();
+      huntTick = setInterval(tick, 1000);
+    })();
   </script>
 </body>
 </html>
