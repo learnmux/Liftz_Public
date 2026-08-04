@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Liftz — Delete Account</title>
+  <style>
+    :root{
+      --app:#FF8737; --app2:#FFC300;
+      --bg:#0a0a0c; --text:#f2f2f5; --muted:#9b9bab; --faint:#6b6b6f;
+      --card:rgba(255,255,255,0.04); --border:rgba(255,255,255,0.10);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      color:var(--text);
+      background:radial-gradient(120% 80% at 50% -10%, rgba(255,135,55,0.14), transparent 60%), linear-gradient(178deg,#14110b 0%,#0b0b0f 40%,#0a0a0c 100%);
+      min-height:100vh; line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+    }
+    .wrap{max-width:680px; margin:0 auto; padding:64px 22px 80px}
+    .brand{display:flex; align-items:center; gap:10px; font-size:13px; font-weight:800;
+      letter-spacing:2px; text-transform:uppercase; color:var(--muted)}
+    h1{font-size:38px; font-weight:800; letter-spacing:-0.5px; margin:14px 0 6px;
+      background:linear-gradient(115deg,var(--app),var(--app2));
+      -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent}
+    .tagline{color:var(--muted); font-size:16px; margin-bottom:36px}
+    h2{font-size:18px; font-weight:700; margin:30px 0 10px}
+    p{color:#d7d7de; font-size:15px}
+    a{color:var(--app); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .card{background:var(--card); border:1px solid var(--border); border-radius:16px;
+      padding:18px 20px; margin-top:14px}
+    .email-btn{display:inline-block; margin-top:6px; padding:12px 22px; border-radius:12px;
+      font-weight:700; font-size:15px; color:#1a1a1a;
+      background:linear-gradient(120deg,var(--app),var(--app2));
+      box-shadow:0 8px 24px rgba(255,135,55,0.35)}
+    ol, ul{margin:8px 0 0 20px; color:#d7d7de; font-size:15px}
+    li{margin-bottom:6px}
+    .q{font-weight:700; color:#fff; margin-top:18px}
+    .q:first-child{margin-top:0}
+    .foot{margin-top:48px; padding-top:20px; border-top:1px solid var(--border);
+      color:var(--faint); font-size:13px}
+    .foot a{color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand">Liftz</div>
+    <h1>Delete Account</h1>
+    <p class="tagline">How to permanently delete your Liftz account and data.</p>
+
+    <h2>Option 1: Delete in the app (fastest)</h2>
+    <div class="card">
+      <ol>
+        <li>Open the Liftz app and sign in.</li>
+        <li>Go to <strong>Profile / Settings</strong>.</li>
+        <li>Scroll to the bottom and tap <strong>Delete account</strong>.</li>
+        <li>Confirm the deletion when prompted.</li>
+      </ol>
+      <p style="margin-top:12px;">Your account is deleted immediately — this cannot be undone.</p>
+    </div>
+
+    <h2>Option 2: Request deletion without the app</h2>
+    <div class="card">
+      <p>If you no longer have the app installed, email us from the address associated with your account and we'll delete it for you.</p>
+      <a class="email-btn" href="mailto:linkesh0017@gmail.com?subject=Delete%20my%20Liftz%20account">linkesh0017@gmail.com</a>
+      <p style="margin-top:12px;">We aim to complete these requests within 7 days.</p>
+    </div>
+
+    <h2>What gets deleted</h2>
+    <div class="card">
+      <p>Deleting your account permanently removes, immediately and in full — nothing is retained afterward:</p>
+      <ul>
+        <li>Your profile (name, email, physical stats, preferences)</li>
+        <li>All workout history, routines, and readiness/insights data</li>
+        <li>Hunt activity, rankings, and reward history</li>
+        <li>Your sign-in account (Google / Apple) associated with Liftz</li>
+      </ul>
+      <p style="margin-top:12px;">Any active subscription is managed separately by the App Store or Google Play — cancel it there if you don't want it to renew, since deleting your Liftz account does not automatically cancel App Store/Play Store billing.</p>
+    </div>
+
+    <div class="foot">
+      © <span id="y"></span> Liftz · <a href="privacy-policy.html">Privacy Policy</a> · <a href="support.html">Support</a>
+    </div>
+  </div>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
