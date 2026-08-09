@@ -161,10 +161,6 @@
       transition: transform 0.18s ease;
     }
 
-    .timer-num.tick {
-      transform: scale(1.12);
-    }
-
     .timer-label {
       font-size: 10px;
       font-weight: 700;
@@ -174,40 +170,10 @@
       margin-top: 4px;
     }
 
-    .timer-sep {
-      font-size: 22px;
-      font-weight: 800;
-      color: var(--muted);
-      padding-bottom: 14px;
-      opacity: 0.55;
-      animation: timerBlink 1s steps(1) infinite;
-    }
-
-    @keyframes timerBlink {
-      50% { opacity: 0.15; }
-    }
-
     .hunt-promo-caption {
       font-size: 11px;
       color: var(--muted);
       letter-spacing: 0.3px;
-    }
-
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0,0,0,0);
-      white-space: nowrap;
-      border: 0;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .timer-sep { animation: none; }
-      .timer-num { transition: none; }
     }
 
     /* Hero */
@@ -731,9 +697,9 @@
     <section class="hunt-promo">
       <div class="hunt-promo-shell">
         <div class="hunt-promo-copy">
-          <div class="hero-kicker" id="huntKicker">Free for your first 2 monthly challenges</div>
-          <h2 id="huntHeadline">Hunt League opens <span>August 1.</span></h2>
-          <p id="huntSubcopy">Walk real routes, score points, and climb the monthly board. Top finishers win Amazon coupon rewards. Install Liftz now — no premium needed for your first two months.</p>
+          <div class="hero-kicker">Free for your first 2 monthly challenges</div>
+          <h2>Hunt League is <span>live now.</span></h2>
+          <p>Walk real routes, score points, and climb this month's board. Top finishers win Amazon coupon rewards. Install Liftz now — no premium needed for your first two months.</p>
           <div class="store-row">
             <a class="appstore-badge" href="https://apps.apple.com/in/app/liftz-your-gym-buddy/id6779775357" aria-label="Download on the App Store" target="_blank" rel="noopener">
               <svg viewBox="0 0 135 40" xmlns="http://www.w3.org/2000/svg">
@@ -748,24 +714,18 @@
           </div>
         </div>
         <div class="hunt-promo-timer-wrap">
-          <p class="sr-only">Hunt League opens August 1, 2026.</p>
-          <div class="hunt-promo-timer" id="huntTimer" aria-hidden="true">
-            <div class="timer-block"><span class="timer-num" id="tDays">00</span><span class="timer-label">Days</span></div>
-            <span class="timer-sep">:</span>
-            <div class="timer-block"><span class="timer-num" id="tHours">00</span><span class="timer-label">Hrs</span></div>
-            <span class="timer-sep">:</span>
-            <div class="timer-block"><span class="timer-num" id="tMins">00</span><span class="timer-label">Min</span></div>
-            <span class="timer-sep">:</span>
-            <div class="timer-block"><span class="timer-num" id="tSecs">00</span><span class="timer-label">Sec</span></div>
+          <div class="timer-block" style="min-width:150px; padding:16px 22px;">
+            <span class="timer-num" style="font-size:22px;">🏆 Open</span>
+            <span class="timer-label">This month's board</span>
           </div>
-          <div class="hunt-promo-caption" id="huntCaption">Countdown shown in IST</div>
+          <div class="hunt-promo-caption">Resets on the 1st of every month</div>
         </div>
       </div>
     </section>
 
     <section class="hero">
       <div class="hero-copy">
-        <div class="hero-kicker">iOS early access is live</div>
+        <div class="hero-kicker">iOS live · Android in testing</div>
         <h1>Train smarter. <span>Hunt harder.</span></h1>
         <p>Liftz adapts workouts to your daily readiness, imports your Hevy history, and turns walking into GPS quests, milestones, and monthly Hunt League rewards.</p>
         <div class="hero-points">
@@ -793,7 +753,7 @@
               <text x="83" y="30" text-anchor="middle" fill="#fff" font-family="-apple-system, sans-serif" font-size="15" font-weight="600">App Store</text>
             </svg>
           </a>
-          <span class="android-pill">Android — coming soon</span>
+          <span class="android-pill">Android — closed testing</span>
         </div>
         <div class="store-row" style="margin-top:40px;">
           <a href="https://www.producthunt.com/products/liftz-your-gym-buddy?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-liftz-your-gym-buddy" target="_blank" rel="noopener noreferrer"><img alt="Liftz — Your Gym Buddy - Train based on your recovery, not a fixed workout plan. | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1188667&amp;theme=light&amp;t=1783303336240"></a>
@@ -830,7 +790,7 @@
         <div class="feature-card">
           <div class="feature-icon">🏆</div>
           <h3>Hunt League</h3>
-          <p>Compete in monthly verified rankings where top eligible premium users can win rewards.</p>
+          <p>Compete in monthly verified rankings, earn milestone badges, and see top eligible premium users win rewards.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">📥</div>
@@ -878,7 +838,7 @@
     <section class="screenshots">
       <div class="section-heading">
         <h2>See it in action</h2>
-        <p>Readiness, workouts, insights, and progress screens from the current iOS app.</p>
+        <p>Readiness, workouts, insights, and progress screens from the app.</p>
       </div>
       <div class="screenshots-swiper" id="screenshotsTrack">
         <img class="screenshot-shot" src="assets/final_screenshots/01_hunt_gps.png" alt="Liftz Hunt GPS-verified walk screen" />
@@ -936,28 +896,36 @@
             <p>Liftz went live on iOS.</p>
           </div>
         </div>
-        <div class="timeline-item upcoming">
+        <div class="timeline-item">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <span class="timeline-date">Jul 2026 <span class="timeline-tag">Rolling out</span></span>
+            <span class="timeline-date">Jul 2026</span>
             <h3>Hunt League, Hevy import, and referrals</h3>
-            <p>The next Liftz update adds GPS walking quests, monthly league rewards, Hevy history import, share cards, and invite tracking.</p>
+            <p>GPS walking quests, monthly league rewards, Hevy history import, share cards, and invite tracking shipped. Hunt League opened August 1 and is live now.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Aug 2026</span>
+            <h3>Android closed testing</h3>
+            <p>Liftz landed on Android, now in closed testing on Google Play with adaptive workouts, readiness scoring, Hevy import, and subscriptions via Google Play Billing.</p>
           </div>
         </div>
         <div class="timeline-item upcoming">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
             <span class="timeline-date">Next <span class="timeline-tag">Planned</span></span>
-            <h3>First 100 early users</h3>
-            <p>A controlled iOS rollout with founder-led feedback, tighter onboarding, and the first Hunt League cohort.</p>
+            <h3>Public Android launch</h3>
+            <p>Graduating from closed testing to a full Google Play release, bringing Hunt League and everything else to Android users everywhere.</p>
           </div>
         </div>
         <div class="timeline-item upcoming">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <span class="timeline-date">After iOS beta</span>
-            <h3>Android and deeper social competition</h3>
-            <p>Android support, stronger friend loops, richer Hunt rewards, and more ways to share progress.</p>
+            <span class="timeline-date">Ahead <span class="timeline-tag">Planned</span></span>
+            <h3>First 100 users and deeper social competition</h3>
+            <p>Tighter onboarding, stronger friend loops, richer Hunt rewards, and more ways to share progress as the community grows.</p>
           </div>
         </div>
       </div>
@@ -976,12 +944,14 @@
             <text x="83" y="30" text-anchor="middle" fill="#fff" font-family="-apple-system, sans-serif" font-size="15" font-weight="600">App Store</text>
           </svg>
         </a>
-        <span class="android-pill">Android — coming soon</span>
+        <span class="android-pill">Android — closed testing</span>
       </div>
     </section>
 
     <footer>
       <a href="../privacy-policy.html">Privacy Policy</a>
+      <span class="sep">·</span>
+      <a href="../delete-account.html">Delete Account</a>
       <span class="sep">·</span>
       <span>&copy; 2026 Liftz. All rights reserved.</span>
     </footer>
@@ -995,50 +965,6 @@
     document.getElementById('swiperNext').addEventListener('click', function () {
       track.scrollBy({ left: 260, behavior: 'smooth' });
     });
-
-    (function () {
-      var target = new Date('2026-08-01T00:00:00+05:30').getTime();
-      var dayEl = document.getElementById('tDays');
-      var hourEl = document.getElementById('tHours');
-      var minEl = document.getElementById('tMins');
-      var secEl = document.getElementById('tSecs');
-      var kicker = document.getElementById('huntKicker');
-      var headline = document.getElementById('huntHeadline');
-      var subcopy = document.getElementById('huntSubcopy');
-      var timerEl = document.getElementById('huntTimer');
-      var caption = document.getElementById('huntCaption');
-      var huntTick;
-
-      function pad(n) { return n < 10 ? '0' + n : '' + n; }
-
-      function goLive() {
-        kicker.textContent = 'Hunt League is live';
-        headline.innerHTML = 'The Hunt is <span>live now.</span>';
-        subcopy.textContent = "Open Liftz, start a walk, and start climbing this month's board. Your first two monthly challenges are free.";
-        timerEl.style.display = 'none';
-        caption.style.display = 'none';
-        clearInterval(huntTick);
-      }
-
-      function tick() {
-        var diff = target - Date.now();
-        if (diff <= 0) { goLive(); return; }
-        var d = Math.floor(diff / 86400000);
-        var h = Math.floor((diff % 86400000) / 3600000);
-        var m = Math.floor((diff % 3600000) / 60000);
-        var s = Math.floor((diff % 60000) / 1000);
-        dayEl.textContent = pad(d);
-        hourEl.textContent = pad(h);
-        minEl.textContent = pad(m);
-        secEl.textContent = pad(s);
-        secEl.classList.remove('tick');
-        void secEl.offsetWidth;
-        secEl.classList.add('tick');
-      }
-
-      tick();
-      huntTick = setInterval(tick, 1000);
-    })();
   </script>
 </body>
 </html>
