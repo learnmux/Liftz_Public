@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Liftz — Train Smarter. Move Freely.</title>
-  <meta name="description" content="Liftz combines daily readiness, adaptive workouts, Hevy import, and free GPS Hunt tracking for every walk and run in one fitness app." />
+  <meta name="description" content="Liftz 4.0: a recovery map of every muscle, workouts built around your daily readiness, Hevy import, a social feed, and free GPS tracking for every walk and run. On iOS and Android." />
 
   <!-- Google tag (gtag.js) -- same Firebase project as the app (liftz-86249), so app opens and landing-page visits report in one place -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-D7GCVW3EV9"></script>
@@ -286,6 +286,11 @@
     .appstore-badge:hover { transform: translateY(-2px); opacity: 0.9; }
 
     .appstore-badge svg { display: block; height: 52px; width: auto; }
+
+    /* Google's official badge PNG has transparent padding; trim it so it lines up with the App Store badge. */
+    .play-badge { display: inline-block; line-height: 0; margin: -11px -9px; transition: transform 0.15s ease, opacity 0.15s ease; }
+    .play-badge:hover { transform: translateY(-2px); opacity: 0.9; }
+    .play-badge img { display: block; height: 75px; width: auto; }
 
     .android-pill {
       display: inline-flex;
@@ -729,9 +734,9 @@
     <section class="hunt-promo">
       <div class="hunt-promo-shell">
         <div class="hunt-promo-copy">
-          <div class="hero-kicker">No subscription needed</div>
-          <h2>Hunt is <span>free to use.</span></h2>
-          <p>GPS-track every walk and run, hit distance milestones, and build your streak — the core of Hunt costs nothing. Install Liftz and start moving today.</p>
+          <div class="hero-kicker">New · Liftz 4.0</div>
+          <h2>A whole new <span>Liftz.</span></h2>
+          <p>A cleaner design, a recovery map of your body on Home, faster set logging, and a social feed to train with friends. Out now on iOS and Android.</p>
           <div class="store-row">
             <a class="appstore-badge" href="https://apps.apple.com/in/app/liftz-your-gym-buddy/id6779775357" aria-label="Download on the App Store" target="_blank" rel="noopener">
               <svg viewBox="0 0 135 40" xmlns="http://www.w3.org/2000/svg">
@@ -743,31 +748,32 @@
                 <text x="83" y="30" text-anchor="middle" fill="#fff" font-family="-apple-system, sans-serif" font-size="15" font-weight="600">App Store</text>
               </svg>
             </a>
+            <a class="play-badge" href="https://play.google.com/store/apps/details?id=com.linkesh.liftz" aria-label="Get it on Google Play" target="_blank" rel="noopener"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" /></a>
           </div>
         </div>
         <div class="hunt-promo-timer-wrap">
           <div class="timer-block" style="min-width:150px; padding:16px 22px;">
-            <span class="timer-num" style="font-size:22px;">🗺️ Free</span>
-            <span class="timer-label">GPS tracking &amp; Bonus Base</span>
+            <span class="timer-num" style="font-size:22px;">✨ 4.0</span>
+            <span class="timer-label">Out now · iOS &amp; Android</span>
           </div>
-          <div class="hunt-promo-caption">Premium unlocks Quests &amp; full history</div>
+          <div class="hunt-promo-caption">Free to start</div>
         </div>
       </div>
     </section>
 
     <section class="hero">
       <div class="hero-copy">
-        <div class="hero-kicker">iOS live · Android in testing</div>
+        <div class="hero-kicker">Live on iOS and Android</div>
         <h1>Train smarter. <span>Move freely.</span></h1>
-        <p>Liftz adapts workouts to your daily readiness, imports your Hevy history, and turns every walk or run into GPS-tracked quests and milestones — free to start, no subscription required.</p>
+        <p>Liftz adapts workouts to your daily readiness, maps every muscle’s recovery, imports your Hevy history, and turns every walk or run into GPS-tracked quests and milestones — free to start, no subscription required.</p>
         <div class="hero-points">
           <div class="hero-point">
             <strong>Daily readiness</strong>
             <span>Know when to push and when to back off.</span>
           </div>
           <div class="hero-point">
-            <strong>Hevy import</strong>
-            <span>Bring your workout history into Liftz.</span>
+            <strong>Body recovery map</strong>
+            <span>See which muscles are ready today.</span>
           </div>
           <div class="hero-point">
             <strong>Liftz Hunt</strong>
@@ -785,7 +791,7 @@
               <text x="83" y="30" text-anchor="middle" fill="#fff" font-family="-apple-system, sans-serif" font-size="15" font-weight="600">App Store</text>
             </svg>
           </a>
-          <span class="android-pill">Android — Google Play closed testing</span>
+          <a class="play-badge" href="https://play.google.com/store/apps/details?id=com.linkesh.liftz" aria-label="Get it on Google Play" target="_blank" rel="noopener"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" /></a>
         </div>
         <div class="store-row" style="margin-top:40px;">
           <a href="https://www.producthunt.com/products/liftz-your-gym-buddy?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-liftz-your-gym-buddy" target="_blank" rel="noopener noreferrer"><img alt="Liftz — Your Gym Buddy - Train based on your recovery, not a fixed workout plan. | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1188667&amp;theme=light&amp;t=1783303336240"></a>
@@ -793,7 +799,7 @@
       </div>
       <div class="hero-visual">
         <div class="hero-phone" aria-label="Liftz home dashboard preview">
-          <img class="hero-phone-img" src="assets/app_store_screenshots_2.5.0/03_home.png" alt="Liftz home dashboard screen" />
+          <img class="hero-phone-img" src="assets/screenshots_4.0.0/hero_home.jpg" alt="Liftz Home screen with a recovery map of every muscle" />
         </div>
       </div>
     </section>
@@ -806,19 +812,19 @@
       </div>
       <div class="built-grid">
         <div class="built-card"><strong>📱 iOS</strong><span>Live on the App Store</span></div>
-        <div class="built-card"><strong>🤖 Android</strong><span>Google Play closed testing</span></div>
-        <div class="built-card"><strong>🚀 10+ releases</strong><span>Beta releases shipped</span></div>
-        <div class="built-card"><strong>👥 20+ users</strong><span>And counting</span></div>
-        <div class="built-card"><strong>🏋️ 15+ workouts</strong><span>Recorded in Liftz</span></div>
+        <div class="built-card"><strong>🤖 Android</strong><span>Live on Google Play</span></div>
+        <div class="built-card"><strong>🚀 Version 4.0</strong><span>Full redesign, Nov 2026</span></div>
+        <div class="built-card"><strong>🧪 586 tests</strong><span>Automated, all passing</span></div>
         <div class="built-card"><strong>⚡ Angular 20+</strong><span>Ionic + Capacitor</span></div>
-        <div class="built-card"><strong>☕ Spring Boot</strong><span>Production backend</span></div>
-        <div class="built-card"><strong>💳 Subscriptions</strong><span>RevenueCat + Google Play Billing</span></div>
+        <div class="built-card"><strong>🛠️ NestJS</strong><span>Prisma + PostgreSQL backend</span></div>
+        <div class="built-card"><strong>💳 Subscriptions</strong><span>RevenueCat + App Store &amp; Play Billing</span></div>
+        <div class="built-card"><strong>📍 Native GPS</strong><span>Background tracking + Live Activities</span></div>
       </div>
     </section>
 
     <section class="features">
       <div class="section-heading">
-        <h2>One app for training, recovery, and competition</h2>
+        <h2>One app for training, recovery, and moving more</h2>
         <p>Built for lifters who want useful decisions, not another empty tracker.</p>
       </div>
       <div class="features-grid">
@@ -830,7 +836,7 @@
         <div class="feature-card">
           <div class="feature-icon">⚡</div>
           <h3>Readiness Score</h3>
-          <p>Sleep, steps, calories, energy, soreness, and intent come together into one daily training signal.</p>
+          <p>Sleep, steps, how you feel, your drive, and soreness come together into one daily training signal.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">👟</div>
@@ -838,9 +844,9 @@
           <p>GPS-track every walk or run, earn points per kilometer, and hit distance milestones — free to use, no subscription needed.</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">📈</div>
-          <h3>Hunt Activity</h3>
-          <p>See your personal distance, pace, and progress build over time. No leaderboard, no pressure — just your own trends.</p>
+          <div class="feature-icon">🧍</div>
+          <h3>Body Recovery Map</h3>
+          <p>Home shows every muscle’s recovery at a glance, and how long until each one is ready to train again.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">📥</div>
@@ -850,7 +856,7 @@
         <div class="feature-card">
           <div class="feature-icon">📊</div>
           <h3>Useful Insights</h3>
-          <p>See muscle fatigue, training frequency, personal records, and lift progress from real workout data.</p>
+          <p>Training load, top movers, muscle balance, personal records, and lift progress from real workout data.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">⏱️</div>
@@ -859,8 +865,8 @@
         </div>
         <div class="feature-card">
           <div class="feature-icon">🤝</div>
-          <h3>Invite Friends</h3>
-          <p>Bring friends into Liftz, compare progress, and build the habit of moving together.</p>
+          <h3>Train Together</h3>
+          <p>Follow friends, share workouts to your feed, and cheer each other on. Follow requests need your approval.</p>
         </div>
       </div>
     </section>
@@ -888,18 +894,19 @@
     <section class="screenshots">
       <div class="section-heading">
         <h2>See it in action</h2>
-        <p>Readiness, Hunt, workouts, and progress screens from the app.</p>
+        <p>Recovery, workouts, insights, Hunt, and history from Liftz 4.0.</p>
       </div>
       <div class="screenshots-swiper" id="screenshotsTrack">
-        <img class="screenshot-shot" src="assets/app_store_screenshots_2.5.0/01_hunt_map.png" alt="Liftz Hunt GPS move-tracking screen" />
-        <img class="screenshot-shot" src="assets/app_store_screenshots_2.5.0/02_quest_board.png" alt="Liftz Hunt quest board screen" />
-        <img class="screenshot-shot" src="assets/app_store_screenshots_2.5.0/03_home.png" alt="Liftz home dashboard screen" />
-        <img class="screenshot-shot" src="assets/app_store_screenshots_2.5.0/04_insights_load.png" alt="Liftz insights and training load screen" />
-        <img class="screenshot-shot" src="assets/app_store_screenshots_2.5.0/05_muscle_balance.png" alt="Liftz muscle frequency insights screen" />
-        <img class="screenshot-shot" src="assets/app_store_screenshots_2.5.0/06_insights_cardio.png" alt="Liftz cardio and lifts insights screen" />
-        <img class="screenshot-shot" src="assets/app_store_screenshots_2.5.0/07_track_every_lift.png" alt="Liftz per-lift strength progress screen" />
-        <img class="screenshot-shot" src="assets/app_store_screenshots_2.5.0/08_crush_every_session.png" alt="Liftz workout session with Muscle Split screen" />
-        <img class="screenshot-shot" src="assets/app_store_screenshots_2.5.0/09_knowledge_hub.png" alt="Liftz knowledge hub screen" />
+        <img class="screenshot-shot" src="assets/screenshots_4.0.0/01_home.jpg" alt="Liftz: Home screen with a recovery map of every muscle" loading="lazy" />
+        <img class="screenshot-shot" src="assets/screenshots_4.0.0/02_checkin.jpg" alt="Liftz: Daily check-in: feeling, drive and soreness" loading="lazy" />
+        <img class="screenshot-shot" src="assets/screenshots_4.0.0/03_session.jpg" alt="Liftz: Logging sets with the rest timer" loading="lazy" />
+        <img class="screenshot-shot" src="assets/screenshots_4.0.0/04_session_detail.jpg" alt="Liftz: Workout detail with muscle split" loading="lazy" />
+        <img class="screenshot-shot" src="assets/screenshots_4.0.0/05_insights.jpg" alt="Liftz: Insights: training load and top movers" loading="lazy" />
+        <img class="screenshot-shot" src="assets/screenshots_4.0.0/06_balance.jpg" alt="Liftz: Readiness trend and muscle frequency" loading="lazy" />
+        <img class="screenshot-shot" src="assets/screenshots_4.0.0/07_hunt.jpg" alt="Liftz: Liftz Hunt walk and run tracking" loading="lazy" />
+        <img class="screenshot-shot" src="assets/screenshots_4.0.0/08_history.jpg" alt="Liftz: Workout history calendar" loading="lazy" />
+        <img class="screenshot-shot" src="assets/screenshots_4.0.0/09_complete.jpg" alt="Liftz: Workout complete summary" loading="lazy" />
+        <img class="screenshot-shot" src="assets/screenshots_4.0.0/10_feed.jpg" alt="Liftz: Friends feed with shared workouts" loading="lazy" />
       </div>
       <div class="swiper-nav">
         <button class="swiper-btn" id="swiperPrev" aria-label="Previous screenshot">&#8249;</button>
@@ -910,7 +917,7 @@
     <section class="roadmap">
       <div class="section-heading">
         <h2>The Journey</h2>
-        <p>From adaptive workouts to a free Hunt — and where Liftz is headed next.</p>
+        <p>From adaptive workouts to Liftz 4.0 — and where we’re headed next.</p>
       </div>
       <div class="timeline">
         <div class="timeline-item">
@@ -969,12 +976,20 @@
             <p>Rebuilt Hunt around personal progress instead of competition: GPS tracking, Bonus Base, and your Profile are now free for everyone. Also shipped Muscle Split breakdowns on every workout, so you see exactly what you trained.</p>
           </div>
         </div>
-        <div class="timeline-item upcoming">
+        <div class="timeline-item">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <span class="timeline-date">Next <span class="timeline-tag">Planned</span></span>
-            <h3>Public Android launch</h3>
-            <p>Graduating from closed testing to a full Google Play release, bringing Hunt and everything else to Android users everywhere.</p>
+            <span class="timeline-date">Aug–Sep 2026</span>
+            <h3>Train together</h3>
+            <p>A friends feed with likes and comments, approval-based follows, profile photos, and shareable workout links anyone can open.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Nov 2026</span>
+            <h3>Liftz 4.0, on iOS and Android</h3>
+            <p>A full redesign: a recovery map of every muscle on Home, faster logging, cleaner Insights and history, a new icon, and a fresh welcome. Live on the App Store and Google Play.</p>
           </div>
         </div>
         <div class="timeline-item upcoming">
@@ -1001,7 +1016,7 @@
             <text x="83" y="30" text-anchor="middle" fill="#fff" font-family="-apple-system, sans-serif" font-size="15" font-weight="600">App Store</text>
           </svg>
         </a>
-        <span class="android-pill">Android — Google Play closed testing</span>
+        <a class="play-badge" href="https://play.google.com/store/apps/details?id=com.linkesh.liftz" aria-label="Get it on Google Play" target="_blank" rel="noopener"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" /></a>
       </div>
     </section>
 
